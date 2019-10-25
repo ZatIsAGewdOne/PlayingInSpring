@@ -17,10 +17,10 @@ public class Artist {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "_id", nullable = false, unique = true)
+	@Column(name = "_id")
 	private int id;
 	
-	@Column(name = "name", nullable = false, length = -1, unique = true)
+	@Column(name = "name", length = -1)
 	private String name;
 	
 	public Artist() {

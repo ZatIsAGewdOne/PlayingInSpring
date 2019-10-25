@@ -52,4 +52,14 @@ public class ArtistService {
 		
 		return artistRepository.save(artist);
 	}
+	
+	public void delete(Artist artist) {
+		Artist foundArtist = artistRepository.findById(artist.getId());
+		
+		if (foundArtist == null) {
+			ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		}
+		
+		artistRepository.delete(foundArtist);
+	}
 }
